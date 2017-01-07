@@ -1,0 +1,262 @@
+/* The page body, mainly sets the wood background. */
+body {
+  background-image: url(../images/bg-wood2.jpg);
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove annoying margins! */
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+/* Set header font, size and weight for h1*/
+h1 {
+  font-family: "amador", serif;
+  font-size: 5em;
+  font-weight: normal;
+}
+
+/* Set font for other headers and paragraphs. */
+h2, h3, p {
+  font-family: "baskerville-urw", serif;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+
+/* Header for the newspaper article's front page, aka "HEROES AND VILLIANS" */
+#article-header-txt {
+  font-family: "baskerville-urw", serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1em;
+}
+
+/*Fullpage flex fills the entire page with a flexbox*/
+#fullpage-flex {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*The main newspaper div*/
+#newspaper {
+  background-image: url(../images/bg-paper.jpg);
+  background-size: cover;
+  align-self: center;
+  width: 80vw;
+  max-width: 960px;
+  padding: 50px 100px 0px 100px;
+  margin: 4em 0 0 0;
+  height: 100%;
+  position: relative;
+  /*clip-path: polygon(97% 4%, 90% 3%, 80% 2%, 70% 2%, 61% 3%, 50% 4%, 41% 4%,
+    22% 2%, 9% 2%, 3% 3%, 3% 7%, 4% 18%, 4% 29%, 4% 41%, 4% 56%, 3% 79%,
+    4% 91%, 3% 96%, 3% 99%, 6% 99%, 14% 98%, 24% 98%, 35% 98%, 48% 98%,
+    65% 98%, 74% 96%, 81% 97%, 87% 97%, 94% 97%, 97% 96%, 98% 83%,
+    96% 68%, 97% 36%
+  );*/
+}
+
+#newspaper:last-of-type {
+  margin-bottom: 4em;
+}
+
+/*A wear overlay to make content look faded.*/
+#newspaper-wear {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../images/newspaper-wear.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* A full page of the newspaper */
+.page {
+  color: #444444;
+  mix-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The main header to the newspaper, that says "The Inquirer" */
+.page > header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+/* For the two advert boxes in the header, at each side of "The Inquirer" */
+.header-box {
+  height: 70px;
+  width: 180px;
+  border: 4px solid #444444;
+  position: relative;
+  top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Create a margin for the first header box to its right. */
+.header-box:first-of-type {
+  margin-right: 2em;
+}
+
+/* Create a margin for the second header box to its left. */
+.header-box:last-of-type {
+  margin-left: 2em;
+}
+
+/* Headers inside the advert boxes, center them up. */
+.header-box h2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* sub-header is the line below the main header, with the date & price */
+#sub-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+  border-top: 4px solid #444444;
+  border-bottom: 4px solid #444444;
+}
+
+/* The columns for the main body content of the newspaper. */
+#article-wrap {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 4px solid #444444;
+  margin-bottom: 20px;
+}
+
+/* Half a flexbox layout */
+.half {
+  flex-basis: 50%;
+}
+
+/* A fifth of a flexbox layout. */
+.fifth {
+  flex-basis: 20%;
+}
+
+/* Two fifths of a flexbox layout. */
+.fifth-2x {
+  flex-basis: 40%;
+}
+
+/* Gutter padding */
+.fifth, .fifth-2x, .half{
+    padding: 0.5em;
+}
+
+/* Removes the top margin on the first paragraph of a column*/
+.fifth p:first-of-type {
+  margin-top: 0;
+}
+
+/* Block quote for newspaper article */
+blockquote {
+  border-top: 4px solid #444444;
+  border-bottom: 4px solid #444444;
+  margin: 0 0 1em 0;
+  padding:0.5em 0;
+  font-size: 22px;
+}
+
+/* Remove margin from P in blockquote, not needed. */
+blockquote p {
+  margin: 0;
+}
+
+/* Responsive image that fits in its container */
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mini image is small picture for in between paragraphs */
+.mini-img {
+  display: block;
+  height: 140px;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* The footer at the bottom of the last page. */
+footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* PAGE TRANSFORMS */
+.page1, .page3 {
+  transform: rotate(-2deg);
+}
+
+.page2 {
+  transform: rotate(2deg);
+}
+
+/*Hyperlinks*/
+a {
+  color: #444444;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #444444;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/*//////////////MEDIA QUERIES////////////////////*/
+/*////////////////////////////////////////////////*/
+
+@media only screen
+  and (max-width: 1150px) {
+    #newspaper {
+      max-width: 800px;
+    }
+    .page1, .page2, .page3 {
+      transform: rotate(0deg);
+    }
+}
+
+
+@media only screen
+  and (max-width: 1000px) {
+    #article-wrap {
+      flex-direction: column;
+    }
+
+    .header-box, .small-detail {
+      display: none;
+    }
+
+    #sub-header {
+      justify-content: center;
+    }
+
+    .sherlock {
+      height: 140px;
+      width: auto;
+      display: block;
+      margin: auto;
+    }
+}
